@@ -1,0 +1,37 @@
+/*type selector*/
+p{
+	color:blue;
+	background-color:yellow;
+}
+
+/*id selector*/
+#intro{
+	color:white;
+	background-color:gray;
+}
+
+/*class selector, type first class and not start with number(start with . instead)*/
+.first{font-size:200%}
+
+/*descendant selector, as many level deep*/
+#intro .first em{
+	color:pink;
+	background-color:blue;
+}
+
+/*font family property css*/
+p.serif{
+	font-family:"Times New Roman",Times,serif;
+}
+p.sansserif{
+	font-family:Helvetica,Arial,sans-serif;
+}
+p.monospace{
+	font-family:"Courier New",Courier,monospace;
+}
+p.cursive{
+	font-family:Florence,cursive;
+}
+p.fantasy{
+	font-family:Blipoo,fantasy;
+}

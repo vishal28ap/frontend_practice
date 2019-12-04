@@ -1,0 +1,65 @@
+<!--Inline CSS-->
+<p style="color:red;background-color:black;">
+Inline CSS</p>
+
+<!--Internal CSS-->
+<html>
+<head>
+<style>
+p{
+	color:white;
+	background-color:gray;
+}
+</style>
+</head>
+<body>
+<p> Internal CSS</p>
+</body>
+</html>
+
+<!--External CSS-->
+<head>
+<link rel="stylesheet" href="css_practice.css">
+<head>
+<body>
+<p> External CSS
+</body>
+
+<!--id selector html-->
+<div id="intro">
+<p> para</p>
+
+<!--Class selector html-->
+<div>
+<p class="first"> This is a paragraph</p>
+<p> second para</p>
+<p class="first"> third para</p>
+
+<!--descendant selector html-->
+<div id="intro">
+<p class="first"> <em>highlighted</em> inside em</p>
+</div>
+<p class="first"> not highlighted as not inside id(thus em)</p>
+
+<!--Inheritance-->
+<html>
+<head>
+<style>
+body{color:green;
+font-family:Arial;
+}
+</style>
+</head>
+<body>
+<p>
+New PAra<!--as not specified, body and para will take style of head defined-->
+</p>
+</body>
+</html>
+
+<!--Font family property-->
+<p class="serif"> Para1 serif font </p>
+<p class="sansserif"> Para2 sans-serif font</p>
+<p class="monospace"> Para3 monospace font</p>
+<p class="cursive"> Para4 cursive font</p>
+<p class="fantasy">Para5 fantasy font</p>
