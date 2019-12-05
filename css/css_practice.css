@@ -35,3 +35,36 @@ p.cursive{
 p.fantasy{
 	font-family:Blipoo,fantasy;
 }
+
+/*font size property css*/
+p.xxsmall{
+	font-size:xx-small;
+}
+p.small{
+font-size:small;
+}
+p.medium{
+	font-size:medium;
+}
+p.large{
+	font-size:large;
+}
+p.xlarge{
+	font-size:x-large;
+}
+/*manipulate font size*/
+h1{
+	font-size:20px;   /*or 1.25em (=20/16 px, 16 is default px)*/
+}
+
+/*font style property css*/
+p.italic{
+	font-style:italic; /*normal or oblique*/
+}
+
+/*font weight property css*/
+p.light{
+	font-weight:light; /*bold,bolder,normal,100-900(100 light and 900 boldest, 400 is normal)*/
+}
+
+/*font variant property css*/
