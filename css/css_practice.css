@@ -68,3 +68,8 @@ p.light{
 }
 
 /*font variant property css*/
+p.small{
+	font-varient:small-caps; /*normal,inherit*/
+}
+
+/*color property css*/
