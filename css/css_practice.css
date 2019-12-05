@@ -4,13 +4,19 @@ p{
 	background-color:yellow;
 }
 
+/*mark*/
+mark { 
+  background-color: red;
+  color: black;
+}
+
 /*id selector*/
 #intro{
 	color:white;
 	background-color:gray;
 }
 
-/*class selector, type first class and not start with number(start with . instead)*/
+/*class selector, type first class and not start with number(. means all elements having class=first)*/
 .first{font-size:200%}
 
 /*descendant selector, as many level deep*/
@@ -73,3 +79,23 @@ p.small{
 }
 
 /*color property css*/
+p.example{
+	color:green;
+}
+p.head{
+	color:#0000FF;
+}
+p.bod{
+	color:rgb(255,0,0);
+}
+
+/*text align property*/
+p.justify{
+	text-align:justify;  /*left,right,center*/
+}
+
+/*vertical align property*/
+td.top{
+	vertical-align:top;  /*middle,bottom,baseline,sub,super,%,px,pt(point),cm(centimeter)*/
+}  /*display:inline-table and display:table cell for div tags*/
+
