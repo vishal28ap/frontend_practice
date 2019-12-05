@@ -96,6 +96,9 @@ style="stroke:#000; fill:green;"/>
 <input type="submit" value="Send" class="submit" />
 </form>
 
+<!--Highlight a text-->
+<p> Highlighted <mark>text</mark></p>
+
 
 <footer>Footer</footer>
 </body>
