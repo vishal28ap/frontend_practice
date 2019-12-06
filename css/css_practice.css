@@ -11,7 +11,7 @@ mark {
 }
 
 /*id selector*/
-#intro{
+#intro{   			/* # means id and . mean class(all if no prefix) */
 	color:white;
 	background-color:gray;
 }
@@ -99,3 +99,38 @@ td.top{
 	vertical-align:top;  /*middle,bottom,baseline,sub,super,%,px,pt(point),cm(centimeter)*/
 }  /*display:inline-table and display:table cell for div tags*/
 
+/*line through property*/
+p.line-through{
+	text-decoration:line-through; /*none,inherit,overline,underline,blink(most browser ignore it)*/
+}
+
+/*text indent property*/
+p.indent{
+	text-indent:6cm; /*length properties(px,pt,cm,em etc.),%,inherit(negative allowed)*/
+}
+
+/*text shadow property*/
+h4{
+	color:blue;
+	font-size:30pt;
+	text-shadow:2px 2px 4px grey; /*x-axis y-axis depth-radius color(all units supported)*/
+}
+
+/*text transform property*/
+p.capital{
+	text-transform:capitalize; /*uppercase,lowercase,none*/
+}
+
+/*letter spacing property(between each char)*/
+p.positive{
+	letter-spacing:3px; /*normal,inherit,length in px pt etc.*/
+}
+
+/*word spacing property(each word)*/
+p.positivew{
+	word-spacing:3px; /*normal,inherit,length in px pt etc.*/
+}
+
+p{
+	white-space:nowrap; /*normal,inherit,pre(on break),pre-line(where break but extra space ignored),pre-wrap(when necessary)*/
+}
