@@ -131,6 +131,66 @@ p.positivew{
 	word-spacing:3px; /*normal,inherit,length in px pt etc.*/
 }
 
+/*white space property*/
 p{
 	white-space:nowrap; /*normal,inherit,pre(on break),pre-line(where break but extra space ignored),pre-wrap(when necessary)*/
 }
+
+/*border property*/
+p.borderpad{
+	padding:10px;
+	border:5px solid green
+}
+
+/*border width property*/
+p.borderwidth{
+	padding:10px;
+	border-style:solid; /*mandatory property--dotted,dashed,double,groove,ridge,inset,outset,hidden,none*/
+	border-width:5px;  /*also different border for different sides, border-top-style,border-right-style,border-bottom-style,border-left-style*/
+	border-color:blue;  /*all 3 format, color hexa and rgb supported*/
+}
+
+/*width & height property*/
+div.newtest{
+	border:5px solid green;
+	width:90px;  /*%,cm and other units also valid*/
+	height:90px;  /*min-width,max-width,min-height,max-height*/
+	background-color:red;
+}
+
+/*background color*/
+body{
+	background-color:#87CEFA; /*name,rgb,hexa*/
+}
+
+/*background image*/
+body{ /*set for body*/
+	background-image:url("test_img.png"); /*image url*/
+}
+
+/*background image/attachment property*/
+p.backimg{
+	padding:100px; /*size of image*/
+	background-image:url("test_img.png"),url("test_img1.jpg"); /*mandatory*/
+	background-repeat:no-repeat; /*repeat-x,repeat-y,inherit*/
+	background-attachment:fixed; /*inherit,scroll*/
+	color:white; /*color of text written*/
+}
+
+/*list-style-type property*/
+ol.circle{
+	list-style-type:circle; /*square,decimal,disc,lower-alpha etc*/
+}
+
+/*list-style-image/position property*/
+ul.limg{
+	list-style-image:url("test_img.png");
+	list-style-position:inside; /*outside as default value*/
+}
+
+/*list-style property*/
+ol.square{
+	list-style:square outside none; /*type,position and image-if one missing, default set*/
+}
+
+	
