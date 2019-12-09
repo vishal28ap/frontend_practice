@@ -193,4 +193,102 @@ ol.square{
 	list-style:square outside none; /*type,position and image-if one missing, default set*/
 }
 
-	
+/*table properties*/
+table{
+border-collapse:seperate;
+border-spacing:20px 40px; /*inner border, outer border*/
+caption-side:top;	/*caption side property, other option being bottom*/
+empty-cells:hide;	/*hide borders and background on empty cells, other value being show*/
+width:100%; /*default auto width*/
+border:1px black;
+}
+td{
+	border:1px black;
+}
+table.fixed{
+	table-layout:fixed; /*auto(default)*/
+}
+
+/*link styling(pseudo selectors)*/
+a:hover{	/*link,visited,hover,active(in order always*/
+	color:red;	/*normal=normal, visited=when user visit,hover=when user hover,active=once clicked by user*/
+	text-decoration:none; /*underline(default)*/ /*border & outline being other two properties*/
+}
+
+/*mouse cursor style*/
+p.mousepointer{
+	cursor:pointer; /* default,crosshair,auto,move,help,text,wait,-resize(n-resize,s,ne,sw,nw,se,e,w),pointer,progress,not-allowed,no-drop,vertical-text,all-scroll,col-resize,row-resize */
+}
+
+/*display property*/
+span{
+	display:block; /*inline,none(wont be displayed at all),list-item,table,table-cell,table-column,grid etc.*/
+}
+
+/*visibility property*/
+p.hidden{
+	visibility:hidden;	/*visible,none(don't even hold a place unlike hidden*/
+}	/*hidden will hide text, but keep spacing as blank*/
+
+/*position property*/
+/*static*/
+p.static_p{
+	position:static;
+	top:30px;
+	right:5px;	/*no effect of top,bottom,left,right*/
+	color:red;
+}
+/*fixed*/
+p.fixed_p{
+	position:fixed;	/*mandatory, removed from normal flow and overlap*/
+	top:30px;
+	right:5px;
+	color:red;
+}
+p.relative_p{
+	position:relative;	/*mandatory, relative to normal*/
+	top:30px;
+	right:5px;
+	color:red;
+}
+p.absolute_p{
+	position:absolute;	/*mandatory, relative to first parent element havin position other than static, otherwise html block*/
+	top:30px;
+	right:5px;
+	color:red;
+}
+
+/*floating property*/
+img.newimg{
+	float:left;	/*right,none(only horizontally)*/
+	margin-right:10px;
+	width:120px;
+}
+#testxt{
+	float:left;
+	width:120px;
+}
+
+/*clearing property*/
+.clearing{
+	clear:both;	/*left,right,none*/
+}
+
+/*overflow property*/
+#overf{
+	width:75px;
+	height:75px;
+	background-color:LightBlue;
+	float:left;
+	overflow:scroll;	/*visible(default),hidden,auto*/	/*both horizontal and vertical scrollbar*/
+}
+
+/*z-index property*/
+#blue{
+	z-index:3;	/*high z-index, more priority, thus red element won't overwite it*/
+	position:relative;	/*instead blue will be full, and red will skip until blue is full*/
+}
+#red{
+	z-index:2;
+	position:relative;	/*valid only on positioned elements i.e. absolute,relative,fixed*/
+}
