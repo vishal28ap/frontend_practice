@@ -157,3 +157,62 @@ New PAra<!--as not specified, body and para will take style of head defined-->
 <li>blue</li>
 </ol>
 
+<!--table properties-->
+<table class="fixed">
+<caption>Test Caption</caption> <!--caption type property-->
+<tr>
+<td width="10%">red</td>
+<td width="30%">yellow</td>
+<td width="60%">magenta</td>
+</tr>
+<tr>
+<td>blue</td>
+<td>gray</td>
+</tr>
+</table>
+
+<!--link styling-->
+<p>
+<a href="http://www.google.com" target="_blank">Hovered</a>
+</p>
+
+<!--mouse cursor style-->
+<span style="cursor:help;"> <!--default,crosshair,auto,move,help,text,wait,-resize(n-resize,s,ne,sw,nw,se,e,w),pointer,progress,not-allowed,no-drop,vertical-text,all-scroll,col-resize,row-resize-->
+Need Help?
+</span>
+<!--mouse cursor style 2-->
+<p class="mousepointer">Mouse Pointer CSS class</p>
+
+<!--display property-->
+<span>First</span>
+<span>Second</span> <!--Remember, every element in web page is a block, display property handles each block-->
+
+<!--visibility property-->
+<p class="hidden">This will be hidden</p>
+<p class="nothidden">This won't be</p>
+
+<!--position property-->
+<!--static-->
+<p class="static_p">Static position</p>
+<!--fixed-->
+<p class="fixed_p">Fixed position</p>
+<!--relative-->
+<p class="relative_p">Relative position</p>
+<!--absolute-->
+<p class="absolute_p">Absolute position</p>
+
+<!--floating property-->
+<img src="test_img.png" class="newimg"/>
+<p id="testxt"> Image floated with text written on right</p>
+
+<!--clearing property-->
+<!--must be used after float to avoid elements following float property-->
+<br class="clearing"/> Out of float<br/>
+
+<!--overflow-->
+<!--needed if an element content overflows its material-->
+<p id="overf">This element should be definitely Overflow element</p>
+
+<!--z-index property-->
+<p id="red">Red</p>
+<p id="blue">Blue</p>
