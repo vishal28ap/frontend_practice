@@ -1,0 +1,82 @@
+/*prefixes if a CSS property not supported
+	firefox -moz-
+	safari -webkit-
+	chrome -webkit-
+	opera -o-
+	IE -ms
+used in case a property is still not supported by a browser*/
+-webkit-border-radius:24px;	
+
+/*border radius property*/
+#1{
+border-radius: 24px;	/*gives rounded corners to an element*/	/*also in order top-left top-right bottom-right bottom-left*/
+background-color: green;
+color: white;
+padding: 50px;
+}
+
+/*circle*/
+#2{
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+	background-color: green;
+	color: white;
+}
+
+/*border-shadow*/
+#3{
+	width: 300px;
+	height: 100px;
+	background-color:#9ACD32;
+	box-shadow: 10px 10px 5px 5px #888888;	/*horizontal-offset vertical-offset blur-distance(optional) spread-distance(optional) color(optional)*/
+}
+
+/*border-shadow*/
+#4{
+	width: 300px;
+	height: 100px;
+	background-color:#9ACD32;
+	box-shadow: inset 10px 10px 5px 5px #888888,
+	inset -10px -10px 5px 5px #888888;	/*inset=inner shadow, multiple can be set by comma seperated*/
+}
+
+/*RGBA color & HSLA*/
+/*red,green,blue,alpha(1=opaque,0=transparent)*/
+/*Hue,saturation,lightness,alpha*/
+/* Hue in (0 to 360 degrees)0 or 360=red, 120=green, 240=blue & saturation in %(100%=full color) & lightness in %(0%=dark, 100%=white) & alpha same as above*/
+body{
+	background:url("sololearn.jpg");
+}
+nav{
+	padding:50px 0;
+	min-width:500px;
+}
+nav ul{
+	background:linear-gradient(90deg,
+	rgba(255, 255, 255, 0) 0%,
+	rgba(255, 255, 255, 0) 25%,
+	rgba(255, 255, 255, 0) 75%,
+	rgba(255, 255, 255, 0) 100%);
+	box-shadow:0 0 25px rgba( 0, 0, 0 ,0.1),
+	inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+nav ul li{
+	display: inline-block;
+}
+nav ul li a{
+	padding: 10px;
+	color: #FFFFFF;
+	font-size: 18px;
+	font-family: Arial;
+	text-decoration: none;
+	display: block;
+}
+
+/*text-shadow*/
+#5{
+	width: 300px;
+	height: 100px;
+	background-color:#9ACD32; /*comma seperated for multiple*/
+	text-shadow: 10px 10px 5px 5px #888888;	/*x-offset y-offset blur-distance(optional) color(optional)*/	/*none to remove*/
+}
