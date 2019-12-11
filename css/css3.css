@@ -114,3 +114,47 @@ h1.tophead{
 	font-family:Delicious, sans-serif;
 }
 	
+/*Gradients*/
+/*Linear Gradient*/
+div.lin{
+	floadt: left;
+	width: 300px;
+	height: 100px;
+	margin: 4px;
+	color: #FFF;
+	background:linear-gradient(left, DeepSkyBlue, Black);	/* at least 2 color stops; color name or RGB or HSL*/
+}	/*direction optional and can be replaced with angle(eg. 100deg); left,right,top,bottom,left right, etc.*/
+/*repeating-linear-gradient(left, DeepSkyBlue, Black) to make pattern repeating*/
+
+
+/*radial Gradient*/
+/* syntax:- background:radial-gradient(position, shape/size, color-stops)*/
+/*position=descriptive(top etc) or %; shape/size=ellipse(default)/circle*/
+div.rad{
+	floadt: left;
+	width: 300px;
+	height: 100px;
+	margin: 4px;
+	color: #FFF;
+	background:radial-gradient(top left, circle, green, Black);	/* at least 2 color stops; color name or RGB or HSL*/
+}	/*direction optional and can be replaced with angle(eg. 100deg); left,right,top,bottom,left right, etc.*/
+/*repeating-linear-gradient(left, DeepSkyBlue, Black) to make pattern repeating*/
+
+
+/*background-image*/
+#reimg{
+	height:150px;
+	width:200px;
+	border: 1px solid #000;
+	background:url("sololearn.jpg") no-repeat 50% 50%;
+	background-size:100px 100px;	/*width height;other values:- contain(resize to fix in box), cover(cropped to fit in box)*/
+}
+
+/*background-clip*/
+/*also applied to images*/
+#first{
+	border: 2px dotted black;
+	padding:20px;
+	background: LightBlue;
+	background-clip:padding-box; /*border-box(default, outside edge of border), content-box(within content box), padding-box(outside edge of padding)*/
+}
