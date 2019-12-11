@@ -80,3 +80,37 @@ nav ul li a{
 	background-color:#9ACD32; /*comma seperated for multiple*/
 	text-shadow: 10px 10px 5px 5px #888888;	/*x-offset y-offset blur-distance(optional) color(optional)*/	/*none to remove*/
 }
+
+/*pseudo class*/
+#parent p:first-child{		/*:last-child(start with colon:)*/
+	color: green;		/*will effect first paragraph of division(child of parent*/
+	text-decoration: underline;
+}
+
+/*pseudo elements, not supported in mozilla yet(-moz)*/
+/*specific parts of elements, start with double colon(::)*/
+p::first-line{	/*first-letter,selection(portion),before,after(element)*/
+	color:#589432;
+}
+
+/*word-wrap property*/
+/*can break words to fit in container*/
+p.longword{
+	width: 210px;
+	height: 100px;
+	border: 1px solid #000000;
+	word-wrap:break-word;	/*normal*/
+}
+
+/* @font-face rule*/
+/*all browsers-ttf(true type font) and otf(open type font), IE=eot(embedded open type)*/
+@font-face{
+	font-family:Delicious;	/*custom font Delicious is loaded and used*/
+	src:url("Delicious-Roman.otf");
+	src:url("Delicious-Roman.eot?#iefix");	/*? makes query in IE, #iefix fix a bug in IE to avoid*/
+}
+}
+h1.tophead{
+	font-family:Delicious, sans-serif;
+}
+	
