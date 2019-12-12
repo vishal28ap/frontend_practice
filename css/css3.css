@@ -158,3 +158,34 @@ div.rad{
 	background: LightBlue;
 	background-clip:padding-box; /*border-box(default, outside edge of border), content-box(within content box), padding-box(outside edge of padding)*/
 }
+
+/*transparent border*/
+div.trans{
+	border: 20px solid rgba(0, 0, 0, 0.3);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding-box;
+	background-clip: padding-box;
+	width: 200px;
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	background-color: white;
+}
+
+/*multiple images*/
+div.mult{
+	width: 400px;
+	height: 300px;
+	background-image: url("sololearn.jpg"), url("sololearn.jpg");
+	background-position: right-bottom, left-top;
+	background-repeat: no-repeat;
+}
+
+/*opacity property*/
+/*Opacity is the measure of impenetrability to electromagnetic or other kinds of radiation, especially visible light*/
+/*light/dark shade to image*/
+#img1{
+	opacity: 0.25;	/*between 0(transparent) and 1(opaque)*/
+	filter:alpha(opacity=25);	/*only for IE*/
+}
+
