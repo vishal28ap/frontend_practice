@@ -100,6 +100,7 @@ p.longword{
 	height: 100px;
 	border: 1px solid #000000;
 	word-wrap:break-word;	/*normal*/
+	font-weight:bold;
 }
 
 /* @font-face rule*/
@@ -117,7 +118,7 @@ h1.tophead{
 /*Gradients*/
 /*Linear Gradient*/
 div.lin{
-	floadt: left;
+	float: left;
 	width: 300px;
 	height: 100px;
 	margin: 4px;
@@ -131,7 +132,7 @@ div.lin{
 /* syntax:- background:radial-gradient(position, shape/size, color-stops)*/
 /*position=descriptive(top etc) or %; shape/size=ellipse(default)/circle*/
 div.rad{
-	floadt: left;
+	float: left;
 	width: 300px;
 	height: 100px;
 	margin: 4px;
@@ -188,4 +189,113 @@ div.mult{
 	opacity: 0.25;	/*between 0(transparent) and 1(opaque)*/
 	filter:alpha(opacity=25);	/*only for IE*/
 }
+
+
+/*CSS3 transitions*/
+/*parameters:- transition-property,transition-duration, transition-timing-function(ease, ease-in, ease-out, ease-in-out,linear,cubic-bezier(a,b,c,d)) transition-delay*/
+#trans{
+	width: 50px;
+	height: 50px;
+	background: #32CD32;
+	transition: width 3s;
+	-webkit-transition: width 3s;
+}
+div:hover{
+	width: 250px;
+}
+
+/*CSS3 transforms*/
+div.rot{
+	width:200px;
+	height: 100px;
+	marhin-top: 30px;
+	background-color: #32CD32;
+	transform: rotate(10deg); /*clockwise*/
+}
+
+/*transform-origin*/
+div.rot2{
+	width:200px;
+	height: 100px;
+	marhin-top: 30px;
+	background-color: #32CD32;
+	transform: rotate(10deg);	/*must be used with transform-origin*/
+	transform-origin: 25% 75%;	/*default 50% 50%(center); 0% 0%(top left) and 100% 100%(bottom right)*/
+}
+
+/*translate method*/
+div.rot3{
+	width:200px;
+	height: 100px;
+	marhin-top: 30px;
+	background-color: #32CD32;
+	transform: translate(100px, 50px);	/*move in x and y, positive values to down and right and negative values to up and left*/
+}	/* another is skew(30deg,20deg), will skew to 30 deg along x axis and 20 along y*/
+
+/*scale*/
+div.rot4{
+	width:200px;
+	height: 100px;
+	marhin-top: 30px;
+	background-color: #32CD32;
+	transform: scale(1.5 1.5);	/*x and y axis, 1=default size*/
+}	
+
+/*multiple transformations*/
+div.rot5{
+	width:200px;
+	height: 100px;
+	marhin-top: 30px;
+	background-color: #32CD32;
+	transform: rotate(45deg) scale(1.5 1.5);	/*space between two transforms*/
+}
+
+/*animation*/
+/*gradually change one style to other*/
+/*inside @keyframe annotation*/
+div.ani{
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	animation-name: colorchange;
+	animation-duration: 1s;	/*default = 0*/
+	animation-timing-function:ease;	/*ease,linear,ease-in,ease-out,ease-in-out,cubic-bezier(n,n,n,n)*/	/*not mandatory*/
+	animation-delay: 2s;	/*not mandatory*/
+	animation-iteration-count: 5;	/*or infinite*/	/*not mandatory*/
+	animation-direction: normal;	/*normal, reverse, alternate, alternate reverse*/	/*not mandatory*/
+}	/*alternatively, animation: colorchange 3s ease-in 1s infinite reverse; */		
+@keyframes colorchange{	/*animation-name*/
+	0% {background-color:red;}
+	50% {background-color:yellow;}
+	70% {background-color:blue;}
+	100% {background-color:green;}
+}	/*from(0%) and to(100%) keywords can also be used*/
+
+/*3D rotation*/
+dix.X{
+	width: 250px;
+	height: 100px;
+	color: white;
+	background-color: green;
+	transform: rotateX(150deg);
+	-weblit-transform: rotateX(150deg);
+}
+dix.Y{
+	width: 250px;
+	height: 100px;
+	color: white;
+	background-color: green;
+	transform: rotateY(150deg);
+	-weblit-transform: rotateY(150deg);
+}
+dix.Z{
+	width: 250px;
+	height: 100px;
+	color: white;
+	background-color: green;
+	transform: rotateZ(150deg);	
+	-webkit-transform: rotateZ(150deg);
+	prespective: 100px/*depth, child elements gets prespective view not element itself*/
+}
+/*for all x,y,z in one go use --> translate3d(x, y, z);scale3d();rotate3d()*/
 
