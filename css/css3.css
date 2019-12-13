@@ -245,7 +245,7 @@ div.rot4{
 div.rot5{
 	width:200px;
 	height: 100px;
-	marhin-top: 30px;
+	margin-top: 30px;
 	background-color: #32CD32;
 	transform: rotate(45deg) scale(1.5 1.5);	/*space between two transforms*/
 }
@@ -299,3 +299,10 @@ dix.Z{
 }
 /*for all x,y,z in one go use --> translate3d(x, y, z);scale3d();rotate3d()*/
 
+/*CSS filters*/
+/*blur(),brightness(),contrast(),drop-shadow(),grayscale(),hue-rotate(),invert(),opacity(),saturate(),sepia()*/
+/*not supported in IE, Edge 12, Safari 5.1 and earlier*/
+img.newfilter{
+	filter: dropshadow5px 9px 2px blue);
+}
+/*hue rotate based on color circle*/
