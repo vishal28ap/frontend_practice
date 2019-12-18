@@ -8,3 +8,15 @@
 vaiable = (condition) ? value1(if True) : value2(if False); 
 */
 
+/*
+conditions:-
+1. if
+2. if-else(also using ternery operator(if(condition)?(true):(false);)
+3. if-else ladder
+4. switch case (default(not mandatory)) --->break/continue keyword to be used, usually in each case
+
+loops:-
+1. for(before,condition,after) loop, all part optional, break required to avoid infinite loop
+2. while loop
+3. do while loop (execute do, if while has condition true executed do again)
+*/
