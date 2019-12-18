@@ -50,13 +50,13 @@ document.write("Return statement function result = "+x);	//optionally document.w
 alert("Hello");
 
 //prompt
-var user=prompt(Please enteryour name);
+var user=prompt("Please enter your name");	//ok and cancel options along with text box
 alert(user);
 
 //confirm
 var result=confirm("Do you really want to leave this page ?");
 if (result == true){
-	alert("Thanks for visiting);
+	alert("Thanks for visiting");
 }
 else{
 	alert("Thanks for staying with us");
