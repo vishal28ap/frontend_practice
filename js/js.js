@@ -20,3 +20,45 @@ loops:-
 2. while loop
 3. do while loop (execute do, if while has condition true executed do again)
 */
+
+/*function-block of reusable code
+function fname(x,y){		->as many parameters as defined in definition separated by comma
+	//code;
+}
+fname(x,y)		->same order of parameters.If more arguments provided than defined, it will be assigned to an array called arguments(arguments[0], arguments[1] and so on
+*/
+function sayHello(name){
+	alert("Hello "+name);
+}
+sayHello("Zead");
+
+//return statement(optional, used when result is needed
+function myFunction(a, b){
+	return a*b;
+}
+var x = myFunction(2,3);
+document.write("Return statement function result = "+x);	//optionally document.write?(myFunction(2,3));
+
+/*types of popups/dialogue boxes:-
+1.Alert	--> alert("");	one paramenter
+2.Prompt	--> prompt("");	usually inside alert
+3.Confirm	-->confirm("");	usually inside alert
+*/
+// line break--> \n
+
+//alert
+alert("Hello");
+
+//prompt
+var user=prompt(Please enteryour name);
+alert(user);
+
+//confirm
+var result=confirm("Do you really want to leave this page ?");
+if (result == true){
+	alert("Thanks for visiting);
+}
+else{
+	alert("Thanks for staying with us");
+}
+
