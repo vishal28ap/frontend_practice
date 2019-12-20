@@ -147,3 +147,95 @@ function bornYear(){
 var p = new person("A", 22);
 document.write(p.yearOfBirth());	//1994
 
+/*Core Objects*/
+
+//Arrays ~ special type of objects
+//declare
+var courses= new Array("a","b");
+var c2=["JS","C++"];	
+//var course= new Array(2); course[0]="a"; courses[1]="b";
+//var courses=new Array(); i.e. no size defined
+//var courses=["a","b"];
+
+//access
+document.write(courses[0]);	//a
+//length
+document.write(courses.length);	//2
+//concat
+var newCourse=courses.concat(c2);
+//associative array(i.e. text index instead of number)~ JS don't support, but an object will be created
+var person=[];	//empty array
+person["name"]="John";
+person["age"]=46;
+document.write(person["age"]);	//46 as object instead of array
+
+
+//Math Object
+/*properties	description
+	E			Euler's constant
+	LN2			Natural Log base 2
+	LN10		Natural log base 10
+	LOG2E		Natural log of e base 2
+	PI			Value of pi
+*/
+//example
+document.write(Math.PI);	//3.14592653589793	//no constructor, thus no need create math object
+
+/*Methods			Description
+	abs(x)			Absolute of x
+	acos(x)			arccosine of x in radians
+	asin(x)			arcsine of x in radians
+	atan(x)			arctangent of x as numeric between -pi/2 and pi/2 radians
+	atan2(y,x)		arctangent of quotient of its arguments
+	ceil(x)			round up to nearest integer
+	floor(x)		round down to nearest integer
+	cos(x)			cosine of x(x in radians)
+	exp(x)			value of E^x
+	log(x)			natural log(base e) of x
+	max(x,y..n)		maximum
+	min(x,y..n)		minimum
+	pow(x,y)		x^y
+	random()		random number between 0 and 1	//random between 1 and 10= Math.ceil(Math.random*10).....and so on
+	round(x)		round x to nearest integer
+	sin(x)			sine of x (x in radians)
+	sqrt(x)			square root of x
+	tan(x)			tangent of angle
+*/
+//example
+var number= Math.sqrt(4);
+document.write(number);	//2
+
+
+//date functions
+
+//setinterval()
+function myAlert(){
+	alert("Hi");
+}
+setInterval(myAlert,3000)	//time in milliseconds
+
+//date
+var d= new Date();	//current date and time in d
+//new Date(milliseconds)
+//new Date(dateString)
+//new Date(year, month, day, hours, minutes, seconds, milliseconds)
+var d1= new Date(86400000);
+var d2= new Date("January 2, 2015 10:42:00");
+var d3= new Date(88,5,11,11,42,0,0);	//Sat Jun 11 1988 11:42:00
+//JS counts months from 0 to 11
+//date is static--not change once defined until changed by user
+
+/*date methods			description
+	getFullYear()		get year
+	getMonth()			get month
+	getDate()			get day of month
+	getDay()			get day of week
+	getHours()			get hour
+	getMinutes()		get minutes
+	getSeconds()		get seconds
+	getMilliseconds()	get the milliseconds
+*/
+var d= new Date();
+var hours = d.getHours();	//current hour
+
+
