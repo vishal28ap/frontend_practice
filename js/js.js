@@ -239,3 +239,66 @@ var d= new Date();
 var hours = d.getHours();	//current hour
 
 
+/*DOM*/
+//Document Object Model---> Object oriented model of its logical structure
+/*Dom Tree-->	Document->html->head->title
+							  |
+							  ->body->h1
+									|
+									->a
+*/
+//imp to understand relationship to manipulate using JS
+
+
+//in JS, document object is owner(root) of all objects from webpage
+document.body.innerHTML="Some Text";	//body is element of DOM, change content of innerHTML property
+//innerHTML used on almost all HTML elements to change contents
+
+
+//all HTML elements are objects(have properties and methods)
+/*
+//find element by id
+document.getElementById(id);
+
+//find element by class name
+document.getElementsByClassName(name);
+
+//find element by tag name
+document.getElementsByTagName(tname);
+*/
+var elem = document.hetElementById("demo");
+elem.innerHTML="Hello World!";
+
+/*relationship methods:-
+element.childNodes
+element.firstChildelement
+element.lastChildelement
+element.hasChildNodes
+element.nextSibling
+element.previousSibling
+element.parentNode
+element.cloneNode
+document.createElement(element)
+document.createTextNode(text)
+element.removeChild(node)
+element.replaceChild(newNode,oldNode)
+// note element is not literal, but the element where work to be done. Document is literal
+*/
+//needed to be appended to existing element with one of following methods
+/*element.appendChild(newNode)
+element.insertBefore(node1, node2) i.e. node 1 before node 2
+*/
+//one node can have only one parent node
+
+
+//change style of HTML
+window.onload=function(){	//call the function in window.onload to make sure HTML is loaded
+	var x = document.getElementById("demo");
+	c.style.color='#6600FF';
+	x.style.width='100px';
+};
+//all CSS properties can be set and modified by JS
+//dashes(-) can't be used, instead camelCasing is used
+//example:- background-color(CSS) ~ backgroundColor(JS)
+
+
