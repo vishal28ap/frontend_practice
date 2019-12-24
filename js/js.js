@@ -302,3 +302,56 @@ window.onload=function(){	//call the function in window.onload to make sure HTML
 //example:- background-color(CSS) ~ backgroundColor(JS)
 
 
+
+//VVVVVV IMP
+/* Event Handling*/
+
+//Events--> user clicks, moves mouse, submit form etc.
+//handler function
+/*Event							Description
+	onclick
+	onload
+	onunload
+	onchange					of form element, selection, checked state changed
+	onmouseover 				mouse onto element/child of that element
+	onmouseout					user moves mouse out of element
+	onmousedown					press mouse button over element
+	onmouseup					release mouse button over element
+	onblur
+	onfocus
+*/
+
+function show(){
+	alert("Hi There");
+}
+
+window.onload= function(){
+	var x = document.getElementById('demo');
+	x.onclick= function(){
+		document.body.innerHTML= Date();
+	}
+};
+
+//on change event
+function change(){
+	var x= document.getElementById('name');
+	x.value=x.value.toUpperCase();
+}
+
+
+//eventlistener
+//element.addEventListener(event, function, useCapture);
+
+//remove itself after execution
+window.onload= function(){
+	var btn=document.getElementById("demo1");
+	btn.addEventListener("click", myFunction);
+	function myFunction(){
+		alert(Math.random());
+		btn.removeEventListener("click", myFunction);
+	}
+};
+
+
+/*Event Propagation*/
+//methods-->bubbling & capturing
