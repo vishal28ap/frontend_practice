@@ -355,3 +355,27 @@ window.onload= function(){
 
 /*Event Propagation*/
 //methods-->bubbling & capturing
+
+//bubbling-->innermost element's event is handled first
+//elem1.addElentListener(event, function, useCapture);	//false for bubbling(default)
+
+//capturing-->outermost element's event handled first
+//elem1.addElentListener(event, function, useCapture);	//true for capturing
+
+
+/*Image Slider*/
+
+
+/*Form Validation*/
+function validate(){
+	var n1= document.getElementById('num1');
+	var n2= document.getElementById('num2');
+	if(n1.value != '' && n2.value != ''){
+		if(n1.value == n2.value){
+			return true;
+		}
+	}
+	alert("The values should be equal and not blank");
+	return false;
+}
+//not get submitted if onsubmit(html) is false
