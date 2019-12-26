@@ -1,0 +1,251 @@
+//ECMAScript(ES6) scripting language specification
+//standardize JS
+
+//ES6 introduced oops
+
+/*variable declaration*/
+var a = 10;		//defines globally or locally to entire function regardless of block scope
+const b='hello';	//can't be changed(immutable), but same scope as let
+let c=true;		//limited in scope to block,statement or expression
+//example
+if(true){
+	let name='Jack';
+}
+alert(name);	//generates error as name has scope inside function only
+
+
+//very good example, please read thoroughly
+function varTest(){
+	var x=1;
+	if (true){
+		var x=2;
+		console.log(x);		//2
+	}
+	console.log(x);		//2
+}
+function letTest(){
+	let x=1;
+	if (true){
+		let x=2;	//different variable than defined above
+		console.log(x);		//2
+	}
+	console.log(x);		//1
+}
+//let can be est used in for/while loops
+//let is not subject to variable hoisting i.e. do not move to top of current execution context
+
+
+
+/*Template literals*/
+//way to output variable in string
+
+//old method
+let name='David';
+let msg='Welcome'+name+'!';
+console.log(msg);		//Welcome David!
+
+//ES6 method
+let name='David';
+let msg=`Welcome ${name}!`;		//${expression} to extract value from variable(placeholder) to string enclosed in Backticks(``)
+console.log(msg);		//Welcome David!
+
+//ES6 example 2
+let a=8;
+let b=6;
+let msg=`The sum is ${a+b}`;
+console.log(msg);		//The sum is 14
+//to escape backtick, use backslash \ before the backtick
+
+
+/*Loops in ES6*/
+
+//for loopslet arr=[1,2,3];
+for (let k=0;k<arr.length;k++){
+	console.log(arr[k]);		//1 2 3
+}
+
+//for...in loop(for each loop in other languages)
+let obj={a:1, b:2 , c:3};
+for(let v in obj){		//should not be used to iterate over array as it can iterate in arbitrary order
+	console.log(v);		//a b c
+}		//also iterating variable is string
+
+//for...of loop
+let list=["x", "y" , "z"];
+for (let val of list){
+	console.log(val);		//x y z
+}
+//works for other iterable too(including newly introduced Map, Set, WeakMap and WeakSet)
+
+
+
+/*function definition*/
+//old syntax
+function add(x,y){
+	var sum=x+y;
+	console.log(sum);		
+}
+add(35,7);		//42
+
+//new syntax
+const add=(x, y) =>{
+	let sum= x+y;
+	console.log(sum);		
+}		//skip function and return keywords as well as some parentheses and braces
+add(35,7);		//42
+
+//new syntax2
+const greet= x => "Welcome "+x;
+alert(greet("David");		//Welcome David
+
+//new syntax3
+const x= () => alert("Hi");
+x();		//Hi
+//if there are no parentheses, empty pair of parentheses should be used//useful for inline functions
+
+
+//old syntax inline
+var arr=[2, 3, 7, 8];
+arr.forEach(function(el){		//we want to execute function for each element of array
+	console.log(el*2);			//4 6 14 16
+});
+
+//ES6 syntax inline
+const arr=[2 , 3, 7, 8];
+arr.forEach(v=>{
+	console.log(v * 2);		//4 6 14 16
+});
+
+
+
+/*default parameters*/
+//default values right while decalring
+function test(a, b=3, c=42)
+{
+	return a+b+c;
+}
+console.log(test(5));		//50
+
+//arrow function
+const test=(a, b=3, c=42) 
+=>{
+	return a+b+c;
+}
+console.log(test(5));		//50
+//default values evaluated at function call time from left to right
+//default expressions can thus use values of previously-filled parameters
+
+
+/*ES6 objects*/
+//object have properties
+//objects can have properties that are function definitions called as methods
+//ES6 introduced shorthand notations and computed property namespaceURI
+
+//method definition shorthand does not require colon(:) or function keyword
+let tree={
+	height:10,
+	color:'green',
+	grow(){		//grow function of tree object
+			this.height +=2;
+	}
+};
+tree.grow();
+console.log(tree.height);		//12
+//in case of duplicate properties, the last property value overrites prior ones
+
+
+//computed property names
+//using square beacket[]
+
+//example1
+let prop='name';
+let id='1234';
+let mobile='08923';
+let user={
+	[prop]:'Jack';
+	[`user_${id}`]:'${mobile}`
+};
+console.log(user.name);		//Jack
+console.lo(user.user_1234);		//08923
+
+//example2
+var i=0;
+var a={
+	['foo'+ ++i]:i,
+	['foo'+ ++i]:i,
+	['foo'+ ++i]:i
+};
+console.log(a.foo1);		//1
+console.log(a.foo2);		//2
+console.log(a.foo3);		//3
+
+//example3
+var param='size';
+var config={
+[param]:12,
+['mobile'+param.charAt(0).toUpperCase()+param.slice(1)]:4		//mobileSize:4
+};
+console.log(config.mobileSize);		//4			
+
+
+
+
+/*assign()*/
+//new object method
+//combine multiple sources to one target to create single object
+//Object.assign() also useful to create duplicate of existing object
+
+//create new object
+let person={
+	name:'Jack',
+	age:18,
+	sex:'male'
+};
+let student={
+	name:'Bob'
+	age:20,
+	xp:'2'
+};
+let newStudent= Object.assign({},person,student);
+
+console.log(newStudent.name);		//Bob
+console.log(newStudent.age);		//20
+console.log(newStudent.sex);		//male
+console.log(newStudent.xp);			//2
+//Object.assign(targetObject,source1,source2...)
+//properties of source1 overridden by properties of source2 and so on, so order is imp
+
+
+//create duplicate object
+//case to handle
+let person={
+	name:'Jack',
+	age:18
+};
+let newPerson=person;	//newPerson references person
+newPerson.name='Bob';
+
+console.log(person.name);		//Bob
+console.log(newPerson.name);		//Bob
+//to avoid the case(mutations), use Object.assign() to create new object
+let person={
+	name:'Jack',
+	age:18
+};
+let newPerson=Object.assign({}, person);	//newPerson references person
+newPerson.name='Bob';
+
+console.log(person.name);		//Jack
+console.log(newPerson.name);		//Bob
+
+
+//assign a value to abject property
+let person={
+	name:'Jack',
+	age:18
+};
+let newPerson=Object.assign({}, person,{name:'Bob'});
+console.log(newPerson.name);		//Bob
+
+
+
