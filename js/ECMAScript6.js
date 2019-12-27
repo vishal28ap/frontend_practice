@@ -305,3 +305,139 @@ console.log(age);		//20
 //rest parameters
 
 //previously
+function containsAll(arr){
+	for(let k=1; k<arguments.length;k++){		//arguments object to pass arguments
+		let num=arguments[k];
+		if(arr.indexOf(num)===-1){
+			return false;
+		}
+	}
+	return true;
+}
+let x=[2,4,6,7];
+console.log(containsAll(x,2,4,7));	//true
+console.log(containsAll(x,6,4,9));	//false
+
+//new(rest parameter)
+function containsAll(arr,...nums){		//...nums(rest parameter) takes all extra arguments
+	for (let num of nums){		//(...) spread operator
+		if (arr.indexOf(num===-1){
+			return false;
+		}
+	}
+	return true;
+}
+let x=[2,4,6,7];
+console.log(containsAll(x,2,4,7));	//true
+console.log(containsAll(x,6,4,9));	//false
+
+
+
+/*Classes*/
+//not hoisted i.e can't access class before declaring
+//example1
+class Rectangle{
+	constructor(height, width){		//constructor method important for initializing(only one each class)
+		this.height=height;
+		this.width=width;
+	}
+}
+const square=new Rectangle(5,5);		//object created
+
+//example2(named class)
+var square= class Rectangle{
+	constructor(height, width){		//constructor method important for initializing
+		this.height=height;
+		this.width=width;
+	}
+};
+
+//example3(unnamed class)
+var square= class {
+	constructor(height, width){		//constructor method important for initializing
+		this.height=height;
+		this.width=width;
+	}
+};
+//static methods cannot be called through class instance(no object creation reaquired)
+
+//inheritance
+//example
+class Animal{
+	constructor(name){
+		this.name=name;
+	}
+	speak(){
+		console.log(this.name+'makes a noise');
+	}
+}
+
+class Dog extends Animal{
+	speak(){		//no constructor in subclass
+		console.log(this.name+'barks');
+	}
+}
+
+let dog=new Dog('Rex');
+dog.speak();		//Rex barks
+
+class Dog extends Animal{
+	speak(){		//no constructor in subclass
+		super.speak();		//called parent class constructor
+		console.log(this.name+'barks');
+	}
+}
+
+let dog=new Dog('Rex');
+dog.speak();		//Rex makes a noise	//Rex barks
+
+
+
+/*Map*/
+//key value pairs(object and primitive values)
+//syntax---> new Map([iterable]) where iterable is array or any iterable object whose elements are array
+let map=new Map([['k1','v1'],['k2','v2']]);
+console.lo(map.size);		//2
+
+/*Map Methods
+get(key,value)
+gey(key)
+has(key)
+delete(key)
+clear()
+keys()-->return iterator of keys
+values()-->return iterator of values
+entires()-->return iterator of array[key,value] in map for each element
+*/
+
+let map=new Map();
+map.set('k1','v1').set('k2','v2');
+
+console.log(map.get('k1'));		//v1
+console.log(map.has('k2'));		//true
+
+for(let kv of map.entries()){
+	console.log(kv[0]+' : '+kv[1]);	//k1:v1		//k2:v2
+}
+
+
+
+/*Set*/
+//unique values
+//new Set([iterable])
+/*Methods
+add(value)
+delete(value)
+has(value)
+clear()
+values()
+*/
+let set=new Set();
+set.add(5).add(9).add(59).add(9).add('9');
+console.log(set.has(9);		//true
+
+for(let v of set.values()){
+	console.log(v);		//5 9 59 '9'
+}
+//NaN and undefined also stored in set
+
