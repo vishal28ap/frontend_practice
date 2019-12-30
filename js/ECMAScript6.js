@@ -397,11 +397,11 @@ dog.speak();		//Rex makes a noise	//Rex barks
 //key value pairs(object and primitive values)
 //syntax---> new Map([iterable]) where iterable is array or any iterable object whose elements are array
 let map=new Map([['k1','v1'],['k2','v2']]);
-console.lo(map.size);		//2
+console.log(map.size);		//2
 
 /*Map Methods
 get(key,value)
-gey(key)
+get(key)
 has(key)
 delete(key)
 clear()
@@ -441,3 +441,95 @@ for(let v of set.values()){
 }
 //NaN and undefined also stored in set
 
+
+
+
+
+
+/*ES6 Promises*/
+//better way for Asynchronous programming then setTimeout()
+
+//using setTimeout()
+setTimeout(function(){		//f1
+	console.log("Work1");
+	setTimeout(function(){		//f2
+		console.log("Work2");
+	},1000);
+},1000);
+console.log("End");		//End Work1 Work2
+
+//using promise(for more complex problems)
+function asyncFunction(work){
+	return new Promise(function(resolve,reject){		//resolve for success and reject for failure
+		if (work === "")
+			reject(Error("Nothing"));
+		setTimeout(function(){
+			resolve(work);
+		},1000);
+	});
+}
+asyncFunc("Work1")
+.then(function(result){
+	console.log(result);
+	return asyncFunction("Work2");
+}, function(error){
+	console.log(error);
+})
+.then(function(result){
+	console.log(result);
+}, function(error){
+	console.log(error);
+});
+console.log("End");
+
+
+
+//general promise syntax
+new Promise(resolve,reject){
+	if(success)
+		resolve(result);
+	else
+		reject(Error("failure"));
+})
+
+
+
+
+/*Iterators and Generators*/
+//Symbol.iterator, gen.next().value
+let myIterableObj={
+	[Symbol.iterator]:function*(){
+		yield1;yield2;...
+		console.log([...myIterableObj]);
+		
+function* idMaker(){	//* makes it generator function
+	let index = 0;
+	while (index < 5)
+		yield index++;
+}
+var gen= idMaker();
+console.log(gen.next().value);
+
+
+
+/*Modules*/
+//maintainability
+//namespacing
+//reuseability
+
+
+
+/*Built in Methods*/
+//find
+[4,5,6,7,8].find(x=>x>3);
+
+//findindex
+[4,5,6,7,8].findIndex(x=>x>3);
+
+//repeat
+console.log("foo".repeat(3));		//foofoofoo
+
+//search
+"Sololearn".startsWith("Solo",0);		//true(index 0 start)
+"Sololearn".endsWith("Solo",4);		//true(index 4 from end)
+"Sololearn".includes("olo",2);		//false(index 2 from start)
